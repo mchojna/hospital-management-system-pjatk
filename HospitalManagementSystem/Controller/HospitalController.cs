@@ -27,16 +27,16 @@ public class HospitalController(IDbService service) : ControllerBase
 
     [Route("{pesel}/bedassignments")]
     [HttpPost]
-    public async Task<IActionResult> AssignPatientToBed([FromRoute] string pesel, [FromBody] AssignBedDto assignBedDto)
+    public async Task<IActionResult> AssignPatientToBed([FromRoute] string pesel, [FromBody] AssignPatientToBedDto assignPatientToBedDto)
     {
         try
         {
-            await _service.AssignPatientToBed(pesel, assignBedDto);
+            await _service.AssignPatientToBedAsync(pesel, assignPatientToBedDto);
             return Created();
         }
         catch (NotFoundException e)
         {
-            return NotFound();
+            return NotFound(e.Message);
         }
     }
 }
