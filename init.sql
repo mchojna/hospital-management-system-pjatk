@@ -1,10 +1,10 @@
 -- Created by Redgate Data Modeler (https://datamodeler.redgate-platform.com)
 -- Last modification date: 2026-05-16 13:09:15.029
 
-CREATE DATABASE Szpital;
+CREATE DATABASE Hospital;
 GO
 
-USE Szpital;
+USE Hospital;
 GO
     
 -- tables
